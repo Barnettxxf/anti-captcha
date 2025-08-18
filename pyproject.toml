@@ -5,18 +5,18 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "torch==2.7.1",
+    "torchaudio==2.7.1",
+    "torchvision==0.22.1",
     "pandas>=2.3.1",
     "scikit-learn>=1.7.1",
     "seaborn>=0.13.2",
     "tensorboard>=2.20.0",
-    "torch==2.7.1",
-    "torchaudio==2.7.1",
-    "torchvision==0.22.1",
     "tqdm>=4.67.1",
 ]
 
 [[tool.uv.index]]
-url = "http://47.118.89.103:8081/repository/ym-pypi/simple"
+url = "https://download.pytorch.org/whl/cu118"
 default = true
 
 [[tool.uv.index]]

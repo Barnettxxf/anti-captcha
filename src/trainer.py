@@ -207,7 +207,7 @@ class Trainer:
 
 def get_default_config():
     return {
-        'data_dir': '/Users/barnettxu/projects/anti-captcha/data/images',
+        'data_dir': 'data/images',
         'model_type': 'simple',
         'loss_type': 'angle',
         'optimizer': 'adam',

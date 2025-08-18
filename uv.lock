@@ -2,9 +2,12 @@ version = 1
 revision = 2
 requires-python = ">=3.10"
 resolution-markers = [
-    "python_full_version >= '3.12'",
-    "python_full_version == '3.11.*'",
-    "python_full_version < '3.11'",
+    "(python_full_version >= '3.12' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.12' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version >= '3.12' and platform_machine == 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.12' and sys_platform == 'darwin')",
+    "(python_full_version == '3.11.*' and platform_machine == 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform == 'darwin')",
+    "(python_full_version < '3.11' and platform_machine == 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform == 'darwin')",
 ]
 
 [[package]]
@@ -57,10 +60,11 @@ name = "contourpy"
 version = "1.3.2"
 source = { registry = "http://pypi.yimian.com.cn/simple" }
 resolution-markers = [
-    "python_full_version < '3.11'",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine == 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform == 'darwin')",
 ]
 dependencies = [
-    { name = "numpy", version = "2.2.6", source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "numpy", marker = "python_full_version < '3.11'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/66/54/eb9bfc647b19f2009dd5c7f5ec51c4e6ca831725f1aea7a993034f483147/contourpy-1.3.2.tar.gz", hash = "sha256:b6945942715a034c671b7fc54f9588126b0b8bf23db2696e3ca8328f3ff0ab54", size = 13466130, upload-time = "2025-04-15T17:47:53.79Z" }
 wheels = [
@@ -127,11 +131,13 @@ name = "contourpy"
 version = "1.3.3"
 source = { registry = "http://pypi.yimian.com.cn/simple" }
 resolution-markers = [
-    "python_full_version >= '3.12'",
-    "python_full_version == '3.11.*'",
+    "(python_full_version >= '3.12' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.12' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version >= '3.12' and platform_machine == 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.12' and sys_platform == 'darwin')",
+    "(python_full_version == '3.11.*' and platform_machine == 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform == 'darwin')",
 ]
 dependencies = [
-    { name = "numpy", version = "2.3.2", source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "numpy", marker = "python_full_version >= '3.11'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/58/01/1253e6698a07380cd31a736d248a3f2a50a7c88779a1813da27503cadc2a/contourpy-1.3.3.tar.gz", hash = "sha256:083e12155b210502d0bca491432bb04d56dc3432f95a979b429f2848c3dbe880", size = 13466174, upload-time = "2025-07-26T12:03:12.549Z" }
 wheels = [
@@ -285,11 +291,11 @@ wheels = [
 
 [[package]]
 name = "fsspec"
-version = "2025.7.0"
+version = "2024.6.1"
 source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }
-sdist = { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/fsspec/2025.7.0/fsspec-2025.7.0.tar.gz", hash = "sha256:786120687ffa54b8283d942929540d8bc5ccfa820deb555a2b5d0ed2b737bf58" }
+sdist = { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/fsspec/2024.6.1/fsspec-2024.6.1.tar.gz", hash = "sha256:fad7d7e209dd4c1208e3bbfda706620e0da5142bebbd9c384afb95b07e798e49" }
 wheels = [
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/fsspec/2025.7.0/fsspec-2025.7.0-py3-none-any.whl", hash = "sha256:8b012e39f63c7d5f10474de957f3ab793b47b45ae7d39f2fb735f8bbe25c0e21" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/fsspec/2024.6.1/fsspec-2024.6.1-py3-none-any.whl", hash = "sha256:3cb443f8bcd2efb31295a5b9fdb02aee81d8452c80d28f97a6d0959e6cee101e" },
 ]
 
 [[package]]
@@ -546,8 +552,7 @@ dependencies = [
     { name = "cycler" },
     { name = "fonttools" },
     { name = "kiwisolver" },
-    { name = "numpy", version = "2.2.6", source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "numpy", version = "2.3.2", source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "numpy" },
     { name = "packaging" },
     { name = "pillow" },
     { name = "pyparsing" },
@@ -625,7 +630,8 @@ name = "networkx"
 version = "3.4.2"
 source = { registry = "http://pypi.yimian.com.cn/simple" }
 resolution-markers = [
-    "python_full_version < '3.11'",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine == 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform == 'darwin')",
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/fd/1d/06475e1cd5264c0b870ea2cc6fdb3e37177c1e565c43f56ff17a10e3937f/networkx-3.4.2.tar.gz", hash = "sha256:307c3669428c5362aab27c8a1260aa8f47c4e91d3891f48be0141738d8d053e1", size = 2151368, upload-time = "2024-10-21T12:39:38.695Z" }
 wheels = [
@@ -637,8 +643,10 @@ name = "networkx"
 version = "3.5"
 source = { registry = "http://pypi.yimian.com.cn/simple" }
 resolution-markers = [
-    "python_full_version >= '3.12'",
-    "python_full_version == '3.11.*'",
+    "(python_full_version >= '3.12' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.12' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version >= '3.12' and platform_machine == 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.12' and sys_platform == 'darwin')",
+    "(python_full_version == '3.11.*' and platform_machine == 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform == 'darwin')",
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/6c/4f/ccdb8ad3a38e583f214547fd2f7ff1fc160c43a75af88e6aec213404b96a/networkx-3.5.tar.gz", hash = "sha256:d4c6f9cf81f52d69230866796b82afbccdec3db7ae4fbd1b65ea750feed50037", size = 2471065, upload-time = "2025-05-29T11:35:07.804Z" }
 wheels = [
@@ -647,152 +655,62 @@ wheels = [
 
 [[package]]
 name = "numpy"
-version = "2.2.6"
+version = "2.1.2"
 source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }
-resolution-markers = [
-    "python_full_version < '3.11'",
-]
-sdist = { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6.tar.gz", hash = "sha256:e29554e2bef54a90aa5cc07da6ce955accb83f21ab5de01a62c8478897b264fd" }
+sdist = { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2.tar.gz", hash = "sha256:13532a088217fa624c99b843eeb54640de23b3414b14aa66d023805eb731066c" }
 wheels = [
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:b412caa66f72040e6d268491a59f2c43bf03eb6c96dd8f0307829feb7fa2b6fb" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:8e41fd67c52b86603a91c1a505ebaef50b3314de0213461c7a6e99c9a3beff90" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp310-cp310-macosx_14_0_arm64.whl", hash = "sha256:37e990a01ae6ec7fe7fa1c26c55ecb672dd98b19c3d0e1d1f326fa13cb38d163" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp310-cp310-macosx_14_0_x86_64.whl", hash = "sha256:5a6429d4be8ca66d889b7cf70f536a397dc45ba6faeb5f8c5427935d9592e9cf" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:efd28d4e9cd7d7a8d39074a4d44c63eda73401580c5c76acda2ce969e0a38e83" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fc7b73d02efb0e18c000e9ad8b83480dfcd5dfd11065997ed4c6747470ae8915" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:74d4531beb257d2c3f4b261bfb0fc09e0f9ebb8842d82a7b4209415896adc680" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:8fc377d995680230e83241d8a96def29f204b5782f371c532579b4f20607a289" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp310-cp310-win32.whl", hash = "sha256:b093dd74e50a8cba3e873868d9e93a85b78e0daf2e98c6797566ad8044e8363d" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp310-cp310-win_amd64.whl", hash = "sha256:f0fd6321b839904e15c46e0d257fdd101dd7f530fe03fd6359c1ea63738703f3" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:f9f1adb22318e121c5c69a09142811a201ef17ab257a1e66ca3025065b7f53ae" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:c820a93b0255bc360f53eca31a0e676fd1101f673dda8da93454a12e23fc5f7a" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp311-cp311-macosx_14_0_arm64.whl", hash = "sha256:3d70692235e759f260c3d837193090014aebdf026dfd167834bcba43e30c2a42" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp311-cp311-macosx_14_0_x86_64.whl", hash = "sha256:481b49095335f8eed42e39e8041327c05b0f6f4780488f61286ed3c01368d491" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b64d8d4d17135e00c8e346e0a738deb17e754230d7e0810ac5012750bbd85a5a" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ba10f8411898fc418a521833e014a77d3ca01c15b0c6cdcce6a0d2897e6dbbdf" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:bd48227a919f1bafbdda0583705e547892342c26fb127219d60a5c36882609d1" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:9551a499bf125c1d4f9e250377c1ee2eddd02e01eac6644c080162c0c51778ab" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp311-cp311-win32.whl", hash = "sha256:0678000bb9ac1475cd454c6b8c799206af8107e310843532b04d49649c717a47" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp311-cp311-win_amd64.whl", hash = "sha256:e8213002e427c69c45a52bbd94163084025f533a55a59d6f9c5b820774ef3303" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:41c5a21f4a04fa86436124d388f6ed60a9343a6f767fced1a8a71c3fbca038ff" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:de749064336d37e340f640b05f24e9e3dd678c57318c7289d222a8a2f543e90c" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp312-cp312-macosx_14_0_arm64.whl", hash = "sha256:894b3a42502226a1cac872f840030665f33326fc3dac8e57c607905773cdcde3" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp312-cp312-macosx_14_0_x86_64.whl", hash = "sha256:71594f7c51a18e728451bb50cc60a3ce4e6538822731b2933209a1f3614e9282" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:f2618db89be1b4e05f7a1a847a9c1c0abd63e63a1607d892dd54668dd92faf87" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fd83c01228a688733f1ded5201c678f0c53ecc1006ffbc404db9f7a899ac6249" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:37c0ca431f82cd5fa716eca9506aefcabc247fb27ba69c5062a6d3ade8cf8f49" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:fe27749d33bb772c80dcd84ae7e8df2adc920ae8297400dabec45f0dedb3f6de" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp312-cp312-win32.whl", hash = "sha256:4eeaae00d789f66c7a25ac5f34b71a7035bb474e679f410e5e1a94deb24cf2d4" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp312-cp312-win_amd64.whl", hash = "sha256:c1f9540be57940698ed329904db803cf7a402f3fc200bfe599334c9bd84a40b2" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:0811bb762109d9708cca4d0b13c4f67146e3c3b7cf8d34018c722adb2d957c84" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:287cc3162b6f01463ccd86be154f284d0893d2b3ed7292439ea97eafa8170e0b" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313-macosx_14_0_arm64.whl", hash = "sha256:f1372f041402e37e5e633e586f62aa53de2eac8d98cbfb822806ce4bbefcb74d" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313-macosx_14_0_x86_64.whl", hash = "sha256:55a4d33fa519660d69614a9fad433be87e5252f4b03850642f88993f7b2ca566" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:f92729c95468a2f4f15e9bb94c432a9229d0d50de67304399627a943201baa2f" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1bc23a79bfabc5d056d106f9befb8d50c31ced2fbc70eedb8155aec74a45798f" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:e3143e4451880bed956e706a3220b4e5cf6172ef05fcc397f6f36a550b1dd868" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:b4f13750ce79751586ae2eb824ba7e1e8dba64784086c98cdbbcc6a42112ce0d" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313-win32.whl", hash = "sha256:5beb72339d9d4fa36522fc63802f469b13cdbe4fdab4a288f0c441b74272ebfd" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313-win_amd64.whl", hash = "sha256:b0544343a702fa80c95ad5d3d608ea3599dd54d4632df855e4c8d24eb6ecfa1c" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313t-macosx_10_13_x86_64.whl", hash = "sha256:0bca768cd85ae743b2affdc762d617eddf3bcf8724435498a1e80132d04879e6" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313t-macosx_11_0_arm64.whl", hash = "sha256:fc0c5673685c508a142ca65209b4e79ed6740a4ed6b2267dbba90f34b0b3cfda" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313t-macosx_14_0_arm64.whl", hash = "sha256:5bd4fc3ac8926b3819797a7c0e2631eb889b4118a9898c84f585a54d475b7e40" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313t-macosx_14_0_x86_64.whl", hash = "sha256:fee4236c876c4e8369388054d02d0e9bb84821feb1a64dd59e137e6511a551f8" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313t-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e1dda9c7e08dc141e0247a5b8f49cf05984955246a327d4c48bda16821947b2f" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313t-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f447e6acb680fd307f40d3da4852208af94afdfab89cf850986c3ca00562f4fa" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313t-musllinux_1_2_aarch64.whl", hash = "sha256:389d771b1623ec92636b0786bc4ae56abafad4a4c513d36a55dce14bd9ce8571" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:8e9ace4a37db23421249ed236fdcdd457d671e25146786dfc96835cd951aa7c1" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313t-win32.whl", hash = "sha256:038613e9fb8c72b0a41f025a7e4c3f0b7a1b5d768ece4796b674c8f3fe13efff" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-cp313-cp313t-win_amd64.whl", hash = "sha256:6031dd6dfecc0cf9f668681a37648373bddd6421fff6c66ec1624eed0180ee06" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-pp310-pypy310_pp73-macosx_10_15_x86_64.whl", hash = "sha256:0b605b275d7bd0c640cad4e5d30fa701a8d59302e127e5f79138ad62762c3e3d" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-pp310-pypy310_pp73-macosx_14_0_x86_64.whl", hash = "sha256:7befc596a7dc9da8a337f79802ee8adb30a552a94f792b9c9d18c840055907db" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ce47521a4754c8f4593837384bd3424880629f718d87c5d44f8ed763edd63543" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.2.6/numpy-2.2.6-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:d042d24c90c41b54fd506da306759e06e568864df8ec17ccc17e9e884634fd00" },
-]
-
-[[package]]
-name = "numpy"
-version = "2.3.2"
-source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }
-resolution-markers = [
-    "python_full_version >= '3.12'",
-    "python_full_version == '3.11.*'",
-]
-sdist = { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2.tar.gz", hash = "sha256:e0486a11ec30cdecb53f184d496d1c6a20786c81e55e41640270130056f8ee48" }
-wheels = [
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:852ae5bed3478b92f093e30f785c98e0cb62fa0a939ed057c31716e18a7a22b9" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:7a0e27186e781a69959d0230dd9909b5e26024f8da10683bd6344baea1885168" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp311-cp311-macosx_14_0_arm64.whl", hash = "sha256:f0a1a8476ad77a228e41619af2fa9505cf69df928e9aaa165746584ea17fed2b" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp311-cp311-macosx_14_0_x86_64.whl", hash = "sha256:cbc95b3813920145032412f7e33d12080f11dc776262df1712e1638207dde9e8" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:f75018be4980a7324edc5930fe39aa391d5734531b1926968605416ff58c332d" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:20b8200721840f5621b7bd03f8dcd78de33ec522fc40dc2641aa09537df010c3" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:1f91e5c028504660d606340a084db4b216567ded1056ea2b4be4f9d10b67197f" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:fb1752a3bb9a3ad2d6b090b88a9a0ae1cd6f004ef95f75825e2f382c183b2097" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp311-cp311-win32.whl", hash = "sha256:4ae6863868aaee2f57503c7a5052b3a2807cf7a3914475e637a0ecd366ced220" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp311-cp311-win_amd64.whl", hash = "sha256:240259d6564f1c65424bcd10f435145a7644a65a6811cfc3201c4a429ba79170" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp311-cp311-win_arm64.whl", hash = "sha256:4209f874d45f921bde2cff1ffcd8a3695f545ad2ffbef6d3d3c6768162efab89" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:bc3186bea41fae9d8e90c2b4fb5f0a1f5a690682da79b92574d63f56b529080b" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:2f4f0215edb189048a3c03bd5b19345bdfa7b45a7a6f72ae5945d2a28272727f" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp312-cp312-macosx_14_0_arm64.whl", hash = "sha256:8b1224a734cd509f70816455c3cffe13a4f599b1bf7130f913ba0e2c0b2006c0" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp312-cp312-macosx_14_0_x86_64.whl", hash = "sha256:3dcf02866b977a38ba3ec10215220609ab9667378a9e2150615673f3ffd6c73b" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:572d5512df5470f50ada8d1972c5f1082d9a0b7aa5944db8084077570cf98370" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:8145dd6d10df13c559d1e4314df29695613575183fa2e2d11fac4c208c8a1f73" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:103ea7063fa624af04a791c39f97070bf93b96d7af7eb23530cd087dc8dbe9dc" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:fc927d7f289d14f5e037be917539620603294454130b6de200091e23d27dc9be" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp312-cp312-win32.whl", hash = "sha256:d95f59afe7f808c103be692175008bab926b59309ade3e6d25009e9a171f7036" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp312-cp312-win_amd64.whl", hash = "sha256:9e196ade2400c0c737d93465327d1ae7c06c7cb8a1756121ebf54b06ca183c7f" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp312-cp312-win_arm64.whl", hash = "sha256:ee807923782faaf60d0d7331f5e86da7d5e3079e28b291973c545476c2b00d07" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:c8d9727f5316a256425892b043736d63e89ed15bbfe6556c5ff4d9d4448ff3b3" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:efc81393f25f14d11c9d161e46e6ee348637c0a1e8a54bf9dedc472a3fae993b" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313-macosx_14_0_arm64.whl", hash = "sha256:dd937f088a2df683cbb79dda9a772b62a3e5a8a7e76690612c2737f38c6ef1b6" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313-macosx_14_0_x86_64.whl", hash = "sha256:11e58218c0c46c80509186e460d79fbdc9ca1eb8d8aee39d8f2dc768eb781089" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:5ad4ebcb683a1f99f4f392cc522ee20a18b2bb12a2c1c42c3d48d5a1adc9d3d2" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:938065908d1d869c7d75d8ec45f735a034771c6ea07088867f713d1cd3bbbe4f" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:66459dccc65d8ec98cc7df61307b64bf9e08101f9598755d42d8ae65d9a7a6ee" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:a7af9ed2aa9ec5950daf05bb11abc4076a108bd3c7db9aa7251d5f107079b6a6" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313-win32.whl", hash = "sha256:906a30249315f9c8e17b085cc5f87d3f369b35fedd0051d4a84686967bdbbd0b" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313-win_amd64.whl", hash = "sha256:c63d95dc9d67b676e9108fe0d2182987ccb0f11933c1e8959f42fa0da8d4fa56" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313-win_arm64.whl", hash = "sha256:b05a89f2fb84d21235f93de47129dd4f11c16f64c87c33f5e284e6a3a54e43f2" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313t-macosx_10_13_x86_64.whl", hash = "sha256:4e6ecfeddfa83b02318f4d84acf15fbdbf9ded18e46989a15a8b6995dfbf85ab" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313t-macosx_11_0_arm64.whl", hash = "sha256:508b0eada3eded10a3b55725b40806a4b855961040180028f52580c4729916a2" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313t-macosx_14_0_arm64.whl", hash = "sha256:754d6755d9a7588bdc6ac47dc4ee97867271b17cee39cb87aef079574366db0a" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313t-macosx_14_0_x86_64.whl", hash = "sha256:a9f66e7d2b2d7712410d3bc5684149040ef5f19856f20277cd17ea83e5006286" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:de6ea4e5a65d5a90c7d286ddff2b87f3f4ad61faa3db8dabe936b34c2275b6f8" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:a3ef07ec8cbc8fc9e369c8dcd52019510c12da4de81367d8b20bc692aa07573a" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313t-musllinux_1_2_aarch64.whl", hash = "sha256:27c9f90e7481275c7800dc9c24b7cc40ace3fdb970ae4d21eaff983a32f70c91" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:07b62978075b67eee4065b166d000d457c82a1efe726cce608b9db9dd66a73a5" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313t-win32.whl", hash = "sha256:c771cfac34a4f2c0de8e8c97312d07d64fd8f8ed45bc9f5726a7e947270152b5" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313t-win_amd64.whl", hash = "sha256:72dbebb2dcc8305c431b2836bcc66af967df91be793d63a24e3d9b741374c450" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp313-cp313t-win_arm64.whl", hash = "sha256:72c6df2267e926a6d5286b0a6d556ebe49eae261062059317837fda12ddf0c1a" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314-macosx_10_13_x86_64.whl", hash = "sha256:448a66d052d0cf14ce9865d159bfc403282c9bc7bb2a31b03cc18b651eca8b1a" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:546aaf78e81b4081b2eba1d105c3b34064783027a06b3ab20b6eba21fb64132b" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314-macosx_14_0_arm64.whl", hash = "sha256:87c930d52f45df092f7578889711a0768094debf73cfcde105e2d66954358125" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314-macosx_14_0_x86_64.whl", hash = "sha256:8dc082ea901a62edb8f59713c6a7e28a85daddcb67454c839de57656478f5b19" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:af58de8745f7fa9ca1c0c7c943616c6fe28e75d0c81f5c295810e3c83b5be92f" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:fed5527c4cf10f16c6d0b6bee1f89958bccb0ad2522c8cadc2efd318bcd545f5" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314-musllinux_1_2_aarch64.whl", hash = "sha256:095737ed986e00393ec18ec0b21b47c22889ae4b0cd2d5e88342e08b01141f58" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314-musllinux_1_2_x86_64.whl", hash = "sha256:b5e40e80299607f597e1a8a247ff8d71d79c5b52baa11cc1cce30aa92d2da6e0" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314-win32.whl", hash = "sha256:7d6e390423cc1f76e1b8108c9b6889d20a7a1f59d9a60cac4a050fa734d6c1e2" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314-win_amd64.whl", hash = "sha256:b9d0878b21e3918d76d2209c924ebb272340da1fb51abc00f986c258cd5e957b" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314-win_arm64.whl", hash = "sha256:2738534837c6a1d0c39340a190177d7d66fdf432894f469728da901f8f6dc910" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314t-macosx_10_13_x86_64.whl", hash = "sha256:4d002ecf7c9b53240be3bb69d80f86ddbd34078bae04d87be81c1f58466f264e" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314t-macosx_11_0_arm64.whl", hash = "sha256:293b2192c6bcce487dbc6326de5853787f870aeb6c43f8f9c6496db5b1781e45" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314t-macosx_14_0_arm64.whl", hash = "sha256:0a4f2021a6da53a0d580d6ef5db29947025ae8b35b3250141805ea9a32bbe86b" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314t-macosx_14_0_x86_64.whl", hash = "sha256:9c144440db4bf3bb6372d2c3e49834cc0ff7bb4c24975ab33e01199e645416f2" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:f92d6c2a8535dc4fe4419562294ff957f83a16ebdec66df0805e473ffaad8bd0" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:cefc2219baa48e468e3db7e706305fcd0c095534a192a08f31e98d83a7d45fb0" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314t-musllinux_1_2_aarch64.whl", hash = "sha256:76c3e9501ceb50b2ff3824c3589d5d1ab4ac857b0ee3f8f49629d0de55ecf7c2" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314t-musllinux_1_2_x86_64.whl", hash = "sha256:122bf5ed9a0221b3419672493878ba4967121514b1d7d4656a7580cd11dddcbf" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314t-win32.whl", hash = "sha256:6f1ae3dcb840edccc45af496f312528c15b1f79ac318169d094e85e4bb35fdf1" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314t-win_amd64.whl", hash = "sha256:087ffc25890d89a43536f75c5fe8770922008758e8eeeef61733957041ed2f9b" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-cp314-cp314t-win_arm64.whl", hash = "sha256:092aeb3449833ea9c0bf0089d70c29ae480685dd2377ec9cdbbb620257f84631" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-pp311-pypy311_pp73-macosx_10_15_x86_64.whl", hash = "sha256:14a91ebac98813a49bc6aa1a0dfc09513dcec1d97eaf31ca21a87221a1cdcb15" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-pp311-pypy311_pp73-macosx_11_0_arm64.whl", hash = "sha256:71669b5daae692189540cffc4c439468d35a3f84f0c88b078ecd94337f6cb0ec" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-pp311-pypy311_pp73-macosx_14_0_arm64.whl", hash = "sha256:69779198d9caee6e547adb933941ed7520f896fd9656834c300bdf4dd8642712" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-pp311-pypy311_pp73-macosx_14_0_x86_64.whl", hash = "sha256:2c3271cc4097beb5a60f010bcc1cc204b300bb3eafb4399376418a83a1c6373c" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-pp311-pypy311_pp73-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:8446acd11fe3dc1830568c941d44449fd5cb83068e5c70bd5a470d323d448296" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-pp311-pypy311_pp73-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:aa098a5ab53fa407fded5870865c6275a5cd4101cfdef8d6fafc48286a96e981" },
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.3.2/numpy-2.3.2-pp311-pypy311_pp73-win_amd64.whl", hash = "sha256:6936aff90dda378c09bea075af0d9c675fe3a977a9d2402f95a87f440f59f619" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:30d53720b726ec36a7f88dc873f0eec8447fbc93d93a8f079dfac2629598d6ee" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:e8d3ca0a72dd8846eb6f7dfe8f19088060fcb76931ed592d29128e0219652884" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp310-cp310-macosx_14_0_arm64.whl", hash = "sha256:fc44e3c68ff00fd991b59092a54350e6e4911152682b4782f68070985aa9e648" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp310-cp310-macosx_14_0_x86_64.whl", hash = "sha256:7c1c60328bd964b53f8b835df69ae8198659e2b9302ff9ebb7de4e5a5994db3d" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:6cdb606a7478f9ad91c6283e238544451e3a95f30fb5467fbf715964341a8a86" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d666cb72687559689e9906197e3bec7b736764df6a2e58ee265e360663e9baf7" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:c6eef7a2dbd0abfb0d9eaf78b73017dbfd0b54051102ff4e6a7b2980d5ac1a03" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:12edb90831ff481f7ef5f6bc6431a9d74dc0e5ff401559a71e5e4611d4f2d466" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp310-cp310-win32.whl", hash = "sha256:a65acfdb9c6ebb8368490dbafe83c03c7e277b37e6857f0caeadbbc56e12f4fb" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp310-cp310-win_amd64.whl", hash = "sha256:860ec6e63e2c5c2ee5e9121808145c7bf86c96cca9ad396c0bd3e0f2798ccbe2" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:b42a1a511c81cc78cbc4539675713bbcf9d9c3913386243ceff0e9429ca892fe" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:faa88bc527d0f097abdc2c663cddf37c05a1c2f113716601555249805cf573f1" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp311-cp311-macosx_14_0_arm64.whl", hash = "sha256:c82af4b2ddd2ee72d1fc0c6695048d457e00b3582ccde72d8a1c991b808bb20f" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp311-cp311-macosx_14_0_x86_64.whl", hash = "sha256:13602b3174432a35b16c4cfb5de9a12d229727c3dd47a6ce35111f2ebdf66ff4" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:1ebec5fd716c5a5b3d8dfcc439be82a8407b7b24b230d0ad28a81b61c2f4659a" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e2b49c3c0804e8ecb05d59af8386ec2f74877f7ca8fd9c1e00be2672e4d399b1" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:2cbba4b30bf31ddbe97f1c7205ef976909a93a66bb1583e983adbd155ba72ac2" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:8e00ea6fc82e8a804433d3e9cedaa1051a1422cb6e443011590c14d2dea59146" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp311-cp311-win32.whl", hash = "sha256:5006b13a06e0b38d561fab5ccc37581f23c9511879be7693bd33c7cd15ca227c" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp311-cp311-win_amd64.whl", hash = "sha256:f1eb068ead09f4994dec71c24b2844f1e4e4e013b9629f812f292f04bd1510d9" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:d7bf0a4f9f15b32b5ba53147369e94296f5fffb783db5aacc1be15b4bf72f43b" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:b1d0fcae4f0949f215d4632be684a539859b295e2d0cb14f78ec231915d644db" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp312-cp312-macosx_14_0_arm64.whl", hash = "sha256:f751ed0a2f250541e19dfca9f1eafa31a392c71c832b6bb9e113b10d050cb0f1" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp312-cp312-macosx_14_0_x86_64.whl", hash = "sha256:bd33f82e95ba7ad632bc57837ee99dba3d7e006536200c4e9124089e1bf42426" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:1b8cde4f11f0a975d1fd59373b32e2f5a562ade7cde4f85b7137f3de8fbb29a0" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6d95f286b8244b3649b477ac066c6906fbb2905f8ac19b170e2175d3d799f4df" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:ab4754d432e3ac42d33a269c8567413bdb541689b02d93788af4131018cbf366" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:e585c8ae871fd38ac50598f4763d73ec5497b0de9a0ab4ef5b69f01c6a046142" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp312-cp312-win32.whl", hash = "sha256:9c6c754df29ce6a89ed23afb25550d1c2d5fdb9901d9c67a16e0b16eaf7e2550" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp312-cp312-win_amd64.whl", hash = "sha256:456e3b11cb79ac9946c822a56346ec80275eaf2950314b249b512896c0d2505e" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:a84498e0d0a1174f2b3ed769b67b656aa5460c92c9554039e11f20a05650f00d" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:4d6ec0d4222e8ffdab1744da2560f07856421b367928026fb540e1945f2eeeaf" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp313-cp313-macosx_14_0_arm64.whl", hash = "sha256:259ec80d54999cc34cd1eb8ded513cb053c3bf4829152a2e00de2371bd406f5e" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp313-cp313-macosx_14_0_x86_64.whl", hash = "sha256:675c741d4739af2dc20cd6c6a5c4b7355c728167845e3c6b0e824e4e5d36a6c3" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:05b2d4e667895cc55e3ff2b56077e4c8a5604361fc21a042845ea3ad67465aa8" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:43cca367bf94a14aca50b89e9bc2061683116cfe864e56740e083392f533ce7a" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp313-cp313-musllinux_1_1_x86_64.whl", hash = "sha256:76322dcdb16fccf2ac56f99048af32259dcc488d9b7e25b51e5eca5147a3fb98" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:32e16a03138cabe0cb28e1007ee82264296ac0983714094380b408097a418cfe" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp313-cp313-win32.whl", hash = "sha256:242b39d00e4944431a3cd2db2f5377e15b5785920421993770cddb89992c3f3a" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp313-cp313-win_amd64.whl", hash = "sha256:f2ded8d9b6f68cc26f8425eda5d3877b47343e68ca23d0d0846f4d312ecaa445" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp313-cp313t-macosx_10_13_x86_64.whl", hash = "sha256:2ffef621c14ebb0188a8633348504a35c13680d6da93ab5cb86f4e54b7e922b5" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp313-cp313t-macosx_11_0_arm64.whl", hash = "sha256:ad369ed238b1959dfbade9018a740fb9392c5ac4f9b5173f420bd4f37ba1f7a0" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp313-cp313t-macosx_14_0_arm64.whl", hash = "sha256:d82075752f40c0ddf57e6e02673a17f6cb0f8eb3f587f63ca1eaab5594da5b17" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp313-cp313t-macosx_14_0_x86_64.whl", hash = "sha256:1600068c262af1ca9580a527d43dc9d959b0b1d8e56f8a05d830eea39b7c8af6" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp313-cp313t-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a26ae94658d3ba3781d5e103ac07a876b3e9b29db53f68ed7df432fd033358a8" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp313-cp313t-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:13311c2db4c5f7609b462bc0f43d3c465424d25c626d95040f073e30f7570e35" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp313-cp313t-musllinux_1_1_x86_64.whl", hash = "sha256:2abbf905a0b568706391ec6fa15161fad0fb5d8b68d73c461b3c1bab6064dd62" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-cp313-cp313t-musllinux_1_2_aarch64.whl", hash = "sha256:ef444c57d664d35cac4e18c298c47d7b504c66b17c2ea91312e979fcfbdfb08a" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-pp310-pypy310_pp73-macosx_10_15_x86_64.whl", hash = "sha256:bdd407c40483463898b84490770199d5714dcc9dd9b792f6c6caccc523c00952" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-pp310-pypy310_pp73-macosx_14_0_x86_64.whl", hash = "sha256:da65fb46d4cbb75cb417cddf6ba5e7582eb7bb0b47db4b99c9fe5787ce5d91f5" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1c193d0b0238638e6fc5f10f1b074a6993cb13b0b431f64079a509d63d3aa8b7" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/numpy/2.1.2/numpy-2.1.2-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:a7d80b2e904faa63068ead63107189164ca443b42dd1930299e0d1cb041cec2e" },
 ]
 
 [[package]]
@@ -834,7 +752,7 @@ name = "nvidia-cudnn-cu12"
 version = "9.5.1.17"
 source = { registry = "http://pypi.yimian.com.cn/simple" }
 dependencies = [
-    { name = "nvidia-cublas-cu12" },
+    { name = "nvidia-cublas-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/2a/78/4535c9c7f859a64781e43c969a3a7e84c54634e319a996d43ef32ce46f83/nvidia_cudnn_cu12-9.5.1.17-py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:30ac3869f6db17d170e0e556dd6cc5eee02647abc31ca856634d5a40f82c15b2", size = 570988386, upload-time = "2024-10-25T19:54:26.39Z" },
@@ -845,7 +763,7 @@ name = "nvidia-cufft-cu12"
 version = "11.3.0.4"
 source = { registry = "http://pypi.yimian.com.cn/simple" }
 dependencies = [
-    { name = "nvidia-nvjitlink-cu12" },
+    { name = "nvidia-nvjitlink-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/8f/16/73727675941ab8e6ffd86ca3a4b7b47065edcca7a997920b831f8147c99d/nvidia_cufft_cu12-11.3.0.4-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:ccba62eb9cef5559abd5e0d54ceed2d9934030f51163df018532142a8ec533e5", size = 200221632, upload-time = "2024-11-20T17:41:32.357Z" },
@@ -874,9 +792,9 @@ name = "nvidia-cusolver-cu12"
 version = "11.7.1.2"
 source = { registry = "http://pypi.yimian.com.cn/simple" }
 dependencies = [
-    { name = "nvidia-cublas-cu12" },
-    { name = "nvidia-cusparse-cu12" },
-    { name = "nvidia-nvjitlink-cu12" },
+    { name = "nvidia-cublas-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux')" },
+    { name = "nvidia-cusparse-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux')" },
+    { name = "nvidia-nvjitlink-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/f0/6e/c2cf12c9ff8b872e92b4a5740701e51ff17689c4d726fca91875b07f655d/nvidia_cusolver_cu12-11.7.1.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:e9e49843a7707e42022babb9bcfa33c29857a93b88020c4e4434656a655b698c", size = 158229790, upload-time = "2024-11-20T17:43:43.211Z" },
@@ -888,7 +806,7 @@ name = "nvidia-cusparse-cu12"
 version = "12.5.4.2"
 source = { registry = "http://pypi.yimian.com.cn/simple" }
 dependencies = [
-    { name = "nvidia-nvjitlink-cu12" },
+    { name = "nvidia-nvjitlink-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/06/1e/b8b7c2f4099a37b96af5c9bb158632ea9e5d9d27d7391d7eb8fc45236674/nvidia_cusparse_cu12-12.5.4.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:7556d9eca156e18184b94947ade0fba5bb47d69cec46bf8660fd2c71a4b48b73", size = 216561367, upload-time = "2024-11-20T17:44:54.824Z" },
@@ -942,8 +860,7 @@ name = "pandas"
 version = "2.3.1"
 source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }
 dependencies = [
-    { name = "numpy", version = "2.2.6", source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "numpy", version = "2.3.2", source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "numpy" },
     { name = "python-dateutil" },
     { name = "pytz" },
     { name = "tzdata" },
@@ -1138,8 +1055,7 @@ version = "1.7.1"
 source = { registry = "http://pypi.yimian.com.cn/simple" }
 dependencies = [
     { name = "joblib" },
-    { name = "numpy", version = "2.2.6", source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "numpy", version = "2.3.2", source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "numpy" },
     { name = "scipy", version = "1.15.3", source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }, marker = "python_full_version < '3.11'" },
     { name = "scipy", version = "1.16.1", source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "threadpoolctl" },
@@ -1178,10 +1094,11 @@ name = "scipy"
 version = "1.15.3"
 source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }
 resolution-markers = [
-    "python_full_version < '3.11'",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine == 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform == 'darwin')",
 ]
 dependencies = [
-    { name = "numpy", version = "2.2.6", source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "numpy", marker = "python_full_version < '3.11'" },
 ]
 sdist = { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/scipy/1.15.3/scipy-1.15.3.tar.gz", hash = "sha256:eae3cf522bc7df64b42cad3925c876e1b0b6c35c1337c93e12c0f366f55b0eaf" }
 wheels = [
@@ -1237,11 +1154,13 @@ name = "scipy"
 version = "1.16.1"
 source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }
 resolution-markers = [
-    "python_full_version >= '3.12'",
-    "python_full_version == '3.11.*'",
+    "(python_full_version >= '3.12' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.12' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version >= '3.12' and platform_machine == 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.12' and sys_platform == 'darwin')",
+    "(python_full_version == '3.11.*' and platform_machine == 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform == 'darwin')",
 ]
 dependencies = [
-    { name = "numpy", version = "2.3.2", source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "numpy", marker = "python_full_version >= '3.11'" },
 ]
 sdist = { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/scipy/1.16.1/scipy-1.16.1.tar.gz", hash = "sha256:44c76f9e8b6e8e488a586190ab38016e4ed2f8a038af7cd3defa903c0a2238b3" }
 wheels = [
@@ -1307,8 +1226,7 @@ version = "0.13.2"
 source = { registry = "http://pypi.yimian.com.cn/simple" }
 dependencies = [
     { name = "matplotlib" },
-    { name = "numpy", version = "2.2.6", source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "numpy", version = "2.3.2", source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "numpy" },
     { name = "pandas" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/86/59/a451d7420a77ab0b98f7affa3a1d78a313d2f7281a57afb1a34bae8ab412/seaborn-0.13.2.tar.gz", hash = "sha256:93e60a40988f4d65e9f4885df477e2fdaff6b73a9ded434c1ab356dd57eefff7", size = 1457696, upload-time = "2024-01-25T13:21:52.551Z" }
@@ -1336,14 +1254,14 @@ wheels = [
 
 [[package]]
 name = "sympy"
-version = "1.14.0"
+version = "1.13.3"
 source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }
 dependencies = [
     { name = "mpmath" },
 ]
-sdist = { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/sympy/1.14.0/sympy-1.14.0.tar.gz", hash = "sha256:d3d3fe8df1e5a0b42f0e7bdf50541697dbe7d23746e894990c030e2b05e72517" }
+sdist = { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/sympy/1.13.3/sympy-1.13.3.tar.gz", hash = "sha256:b27fd2c6530e0ab39e275fc9b683895367e51d5da91baa8d3d64db2565fec4d9" }
 wheels = [
-    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/sympy/1.14.0/sympy-1.14.0-py3-none-any.whl", hash = "sha256:e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5" },
+    { url = "http://47.118.89.103:8081/repository/ym-pypi/packages/sympy/1.13.3/sympy-1.13.3-py3-none-any.whl", hash = "sha256:54612cf55a62755ee71824ce692986f23c88ffa77207b30c1368eda4a7060f73" },
 ]
 
 [[package]]
@@ -1354,8 +1272,7 @@ dependencies = [
     { name = "absl-py" },
     { name = "grpcio" },
     { name = "markdown" },
-    { name = "numpy", version = "2.2.6", source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "numpy", version = "2.3.2", source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "numpy" },
     { name = "packaging" },
     { name = "pillow" },
     { name = "protobuf" },
@@ -1473,8 +1390,7 @@ name = "torchvision"
 version = "0.22.1"
 source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }
 dependencies = [
-    { name = "numpy", version = "2.2.6", source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "numpy", version = "2.3.2", source = { registry = "http://47.118.89.103:8081/repository/ym-pypi/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "numpy" },
     { name = "pillow" },
     { name = "torch" },
 ]
@@ -1518,7 +1434,7 @@ name = "triton"
 version = "3.3.1"
 source = { registry = "http://pypi.yimian.com.cn/simple" }
 dependencies = [
-    { name = "setuptools" },
+    { name = "setuptools", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/8d/a9/549e51e9b1b2c9b854fd761a1d23df0ba2fbc60bd0c13b489ffa518cfcb7/triton-3.3.1-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:b74db445b1c562844d3cfad6e9679c72e93fdfb1a90a24052b03bb5c49d1242e", size = 155600257, upload-time = "2025-05-29T23:39:36.085Z" },

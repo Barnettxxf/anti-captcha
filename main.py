@@ -89,7 +89,7 @@ def evaluate_model(model_path, model_type='optimized'):
     
     # Create test loader
     _, test_loader = get_data_loaders(
-        data_dir='/Users/barnettxu/projects/anti-captcha/data/images',
+        data_dir='data/images',
         batch_size=32,
         num_workers=4
     )
