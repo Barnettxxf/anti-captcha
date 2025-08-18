@@ -8,7 +8,7 @@ import os
 
 from src.data_loader import get_data_loaders
 from src.models import SimpleCNN, OptimizedCNN, ResNetCNN
-from src.losses import AngleLoss, CircularLoss, CombinedLoss, SmoothL1AngleLoss
+from src.losses import CircularLoss, CombinedLoss, SmoothL1AngleLoss
 
 
 class Trainer:
@@ -43,9 +43,7 @@ class Trainer:
         return model.to(self.device)
     
     def _build_loss(self, loss_type):
-        if loss_type == 'angle':
-            return AngleLoss()
-        elif loss_type == 'circular':
+        if loss_type == 'circular':
             return CircularLoss()
         elif loss_type == 'combined':
             return CombinedLoss()

@@ -34,7 +34,7 @@ def phase2_experiment():
     config = get_default_config()
     config.update({
         'model_type': 'optimized',
-        'loss_type': 'combined',
+        'loss_type': 'circular',
         'optimizer': 'adamw',
         'learning_rate': 1e-4,
         'batch_size': 64,

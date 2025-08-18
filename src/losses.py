@@ -33,18 +33,18 @@ class CircularLoss(nn.Module):
 
 
 class CombinedLoss(nn.Module):
-    def __init__(self, angle_weight=1.0, circular_weight=1.0):
+    def __init__(self, circular_weight=1.0, smooth_l1_weight=0.5):
         super(CombinedLoss, self).__init__()
-        self.angle_loss = AngleLoss()
         self.circular_loss = CircularLoss()
-        self.angle_weight = angle_weight
+        self.smooth_l1_loss = SmoothL1AngleLoss()
         self.circular_weight = circular_weight
+        self.smooth_l1_weight = smooth_l1_weight
     
     def forward(self, pred, target):
-        angle_loss = self.angle_loss(pred, target)
         circular_loss = self.circular_loss(pred, target)
+        smooth_l1_loss = self.smooth_l1_loss(pred, target)
         
-        return self.angle_weight * angle_loss + self.circular_weight * circular_loss
+        return self.circular_weight * circular_loss + self.smooth_l1_weight * smooth_l1_loss
 
 
 class SmoothL1AngleLoss(nn.Module):
