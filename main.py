@@ -34,11 +34,11 @@ def phase2_experiment():
     config = get_default_config()
     config.update({
         'model_type': 'optimized',
-        'loss_type': 'circular',
+        'loss_type': 'combined',
         'optimizer': 'adamw',
-        'learning_rate': 1e-4,
-        'batch_size': 64,
-        'num_epochs': 100,
+        'learning_rate': 5e-4,
+        'batch_size': 32,
+        'num_epochs': 300,
         'scheduler': 'cosine'
     })
     
@@ -46,6 +46,26 @@ def phase2_experiment():
     trainer.train(config['num_epochs'])
     
     print("Phase 2 training completed!")
+
+def phase2_1_experiment():
+    """Phase 2.1: Minimal model for uniform angle distribution"""
+    print("=== Phase 2.1: Minimal Model ===")
+    
+    config = get_default_config()
+    config.update({
+        'model_type': 'minimal',
+        'loss_type': 'circular',
+        'optimizer': 'adamw',
+        'learning_rate': 1e-3,
+        'batch_size': 32,
+        'num_epochs': 200,
+        'scheduler': 'plateau'
+    })
+    
+    trainer = Trainer(config)
+    trainer.train(config['num_epochs'])
+    
+    print("Phase 2.1 training completed!")
 
 
 def phase3_experiment():
@@ -108,8 +128,8 @@ def evaluate_model(model_path, model_type='optimized'):
 
 def main():
     parser = argparse.ArgumentParser(description='Anti-Captcha Rotation Prediction')
-    parser.add_argument('--phase', type=int, choices=[1, 2, 3], default=1,
-                        help='Training phase (1: simple, 2: optimized, 3: resnet)')
+    parser.add_argument('--phase', type=int, choices=[1, 2, 3, 21], default=1,
+                        help='Training phase (1: simple, 2: optimized, 2.1: minimal, 3: resnet)')
     parser.add_argument('--evaluate', type=str, help='Path to model checkpoint for evaluation')
     parser.add_argument('--model-type', type=str, choices=['simple', 'optimized', 'resnet'], 
                         default='optimized', help='Model type for evaluation')
@@ -128,6 +148,8 @@ def main():
             phase1_experiment()
         elif args.phase == 2:
             phase2_experiment()
+        elif args.phase == 21:
+            phase2_1_experiment()
         elif args.phase == 3:
             phase3_experiment()
 
